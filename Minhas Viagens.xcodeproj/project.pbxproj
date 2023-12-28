@@ -13,6 +13,9 @@
 		BCC4DE392B224B9800C88192 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCC4DE372B224B9800C88192 /* Main.storyboard */; };
 		BCC4DE3B2B224B9A00C88192 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCC4DE3A2B224B9A00C88192 /* Assets.xcassets */; };
 		BCC4DE3E2B224B9A00C88192 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCC4DE3C2B224B9A00C88192 /* LaunchScreen.storyboard */; };
+		BCC4DE4A2B27E08100C88192 /* LocaisViewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC4DE492B27E08100C88192 /* LocaisViewTableViewController.swift */; };
+		BCC4DE6F2B27FAE600C88192 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC4DE6E2B27FAE600C88192 /* CoreLocation.framework */; };
+		BCE273DC2B3785F1009144F7 /* ArmazenamentoDados.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE273DB2B3785F1009144F7 /* ArmazenamentoDados.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		BCC4DE3A2B224B9A00C88192 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BCC4DE3D2B224B9A00C88192 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BCC4DE3F2B224B9A00C88192 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BCC4DE492B27E08100C88192 /* LocaisViewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocaisViewTableViewController.swift; sourceTree = "<group>"; };
+		BCC4DE6E2B27FAE600C88192 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		BCE273DB2B3785F1009144F7 /* ArmazenamentoDados.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmazenamentoDados.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCC4DE6F2B27FAE600C88192 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +49,7 @@
 			children = (
 				BCC4DE302B224B9800C88192 /* Minhas Viagens */,
 				BCC4DE2F2B224B9800C88192 /* Products */,
+				BCC4DE6D2B27FAE600C88192 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +64,25 @@
 		BCC4DE302B224B9800C88192 /* Minhas Viagens */ = {
 			isa = PBXGroup;
 			children = (
+				BCC4DE492B27E08100C88192 /* LocaisViewTableViewController.swift */,
 				BCC4DE312B224B9800C88192 /* AppDelegate.swift */,
 				BCC4DE332B224B9800C88192 /* SceneDelegate.swift */,
 				BCC4DE352B224B9800C88192 /* ViewController.swift */,
+				BCE273DB2B3785F1009144F7 /* ArmazenamentoDados.swift */,
 				BCC4DE372B224B9800C88192 /* Main.storyboard */,
 				BCC4DE3A2B224B9A00C88192 /* Assets.xcassets */,
 				BCC4DE3C2B224B9A00C88192 /* LaunchScreen.storyboard */,
 				BCC4DE3F2B224B9A00C88192 /* Info.plist */,
 			);
 			path = "Minhas Viagens";
+			sourceTree = "<group>";
+		};
+		BCC4DE6D2B27FAE600C88192 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BCC4DE6E2B27FAE600C88192 /* CoreLocation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,8 +157,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCC4DE362B224B9800C88192 /* ViewController.swift in Sources */,
+				BCE273DC2B3785F1009144F7 /* ArmazenamentoDados.swift in Sources */,
 				BCC4DE322B224B9800C88192 /* AppDelegate.swift in Sources */,
 				BCC4DE342B224B9800C88192 /* SceneDelegate.swift in Sources */,
+				BCC4DE4A2B27E08100C88192 /* LocaisViewTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

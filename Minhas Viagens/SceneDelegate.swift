@@ -1,10 +1,3 @@
-//
-//  SceneDelegate.swift
-//  Minhas Viagens
-//
-//  Created by Thalytinha on 07/12/23.
-//
-
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
