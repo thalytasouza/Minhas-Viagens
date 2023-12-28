@@ -40,6 +40,27 @@ class LocaisViewTableViewController: UITableViewController {
         }
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        performSegue(withIdentifier: "verLocal", sender: indexPath.row)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "verLocal"{
+            
+            let viewControllerDestino = segue.destination as! ViewController
+            if let indiceRecuperado = sender {
+                
+                let indice = indiceRecuperado as! Int
+                viewControllerDestino.viagem = locaisViagens[ indice ]
+                viewControllerDestino.indiceSelecionado = indice
+                
+            }
+            
+        }
+    }
+    
     func atualizarViagens(){
         locaisViagens = ArmazenamentoDados().listarViagens()
         tableView.reloadData()

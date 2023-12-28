@@ -7,9 +7,12 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     @IBOutlet weak var mapa: MKMapView!
     var gerenciadorLocalizacao = CLLocationManager()
     var viagem: Dictionary<String, String> = [:]
+    var indiceSelecionado: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print( indiceSelecionado )
         
         configuraGerenciadorLocalizacao()
         
