@@ -14,12 +14,11 @@
 		BCC4DE3B2B224B9A00C88192 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCC4DE3A2B224B9A00C88192 /* Assets.xcassets */; };
 		BCC4DE3E2B224B9A00C88192 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCC4DE3C2B224B9A00C88192 /* LaunchScreen.storyboard */; };
 		BCC4DE4A2B27E08100C88192 /* LocaisViewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC4DE492B27E08100C88192 /* LocaisViewTableViewController.swift */; };
-		BCC4DE6F2B27FAE600C88192 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC4DE6E2B27FAE600C88192 /* CoreLocation.framework */; };
 		BCE273DC2B3785F1009144F7 /* ArmazenamentoDados.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE273DB2B3785F1009144F7 /* ArmazenamentoDados.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BCC4DE2E2B224B9800C88192 /* Minhas Viagens.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Minhas Viagens.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCC4DE2E2B224B9800C88192 /* Minhas Viagens.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "Minhas Viagens.app"; path = "/Users/thalytinha/Documents/Minhas Viagens/build/Debug-iphoneos/Minhas Viagens.app"; sourceTree = "<absolute>"; };
 		BCC4DE312B224B9800C88192 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCC4DE332B224B9800C88192 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		BCC4DE352B224B9800C88192 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -28,7 +27,6 @@
 		BCC4DE3D2B224B9A00C88192 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BCC4DE3F2B224B9A00C88192 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCC4DE492B27E08100C88192 /* LocaisViewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocaisViewTableViewController.swift; sourceTree = "<group>"; };
-		BCC4DE6E2B27FAE600C88192 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		BCE273DB2B3785F1009144F7 /* ArmazenamentoDados.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmazenamentoDados.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -37,7 +35,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BCC4DE6F2B27FAE600C88192 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,17 +45,7 @@
 			isa = PBXGroup;
 			children = (
 				BCC4DE302B224B9800C88192 /* Minhas Viagens */,
-				BCC4DE2F2B224B9800C88192 /* Products */,
-				BCC4DE6D2B27FAE600C88192 /* Frameworks */,
 			);
-			sourceTree = "<group>";
-		};
-		BCC4DE2F2B224B9800C88192 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				BCC4DE2E2B224B9800C88192 /* Minhas Viagens.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		BCC4DE302B224B9800C88192 /* Minhas Viagens */ = {
@@ -75,14 +62,6 @@
 				BCC4DE3F2B224B9A00C88192 /* Info.plist */,
 			);
 			path = "Minhas Viagens";
-			sourceTree = "<group>";
-		};
-		BCC4DE6D2B27FAE600C88192 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				BCC4DE6E2B27FAE600C88192 /* CoreLocation.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,7 +108,7 @@
 				Base,
 			);
 			mainGroup = BCC4DE252B224B9800C88192;
-			productRefGroup = BCC4DE2F2B224B9800C88192 /* Products */;
+			productRefGroup = BCC4DE252B224B9800C88192;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
