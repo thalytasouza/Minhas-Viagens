@@ -3,6 +3,7 @@ import UIKit
 class LocaisViewTableViewController: UITableViewController {
     
     var locaisViagens: [Dictionary<String, String>] = []
+    var controleNavegacao = "adicionar"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -10,6 +11,7 @@ class LocaisViewTableViewController: UITableViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        controleNavegacao = "adicionar"
         atualizarViagens()
     }
     
@@ -41,6 +43,7 @@ class LocaisViewTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.controleNavegacao = "listar"
         
         performSegue(withIdentifier: "verLocal", sender: indexPath.row)
     }
@@ -50,12 +53,19 @@ class LocaisViewTableViewController: UITableViewController {
         if segue.identifier == "verLocal"{
             
             let viewControllerDestino = segue.destination as! ViewController
-            if let indiceRecuperado = sender {
+            
+            if self.controleNavegacao == "listar" {
                 
-                let indice = indiceRecuperado as! Int
-                viewControllerDestino.viagem = locaisViagens[ indice ]
-                viewControllerDestino.indiceSelecionado = indice
-                
+                if let indiceRecuperado = sender {
+                    
+                    let indice = indiceRecuperado as! Int
+                    viewControllerDestino.viagem = locaisViagens[ indice ]
+                    viewControllerDestino.indiceSelecionado = indice
+                    
+                }
+            }else{
+                viewControllerDestino.viagem = [:]
+                viewControllerDestino.indiceSelecionado = -1
             }
             
         }

@@ -11,15 +11,76 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
+                        
+        if let indice = indiceSelecionado {
+            
+            if indice == -1 {//adicionar
+                
+                configuraGerenciadorLocalizacao()
+
+            }else{//listar
+                
+                exibirAnotacao( viagem: viagem )
+            }
+        }
         
-        print( indiceSelecionado )
-        
-        configuraGerenciadorLocalizacao()
-        
+        //para reconhecer gestos
         let reconhecedorGesto = UILongPressGestureRecognizer(target: self, action: #selector( ViewController.marcar(gesture:) ))
         reconhecedorGesto.minimumPressDuration = 2
         
         mapa.addGestureRecognizer(reconhecedorGesto)
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        let local = locations.last!
+        
+        //exibir local
+        let localizacao = CLLocationCoordinate2D(latitude: local.coordinate.latitude, longitude: local.coordinate.longitude)
+        let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+
+        let regiao = MKCoordinateRegion(center: localizacao, span: span)
+        self.mapa.setRegion(regiao, animated: true)
+    }
+    
+    func exibirLocal(latitude: Double, longitude: Double){
+        
+        //exibir local
+        let localizacao = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+
+        let regiao = MKCoordinateRegion(center: localizacao, span: span)
+        self.mapa.setRegion(regiao, animated: true)
+        
+        
+    }
+    
+    func exibirAnotacao( viagem: Dictionary<String, String> ){
+        
+        //para exibir anotação com os dados de endereço
+        if let localViagem = viagem["local"]{
+            if let latitudeS = viagem["latitude"]{
+                if let longitudeS = viagem["longitude"]{
+                    if let latitude = Double(latitudeS){
+                        if let longitude = Double(longitudeS){
+                        
+                            //adicionar anotacao
+                            let anotacao = MKPointAnnotation()
+                            
+                            anotacao.coordinate.latitude = latitude
+                            anotacao.coordinate.longitude = longitude
+                            anotacao.title = localViagem
+                            
+                            self.mapa.addAnnotation(anotacao)
+                            
+                            exibirLocal(latitude: latitude, longitude: longitude)
+                            
+                        }
+                    }
+                }
+            }
+        }
+        
     }
     
     @objc func marcar(gesture: UIGestureRecognizer){
@@ -52,13 +113,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
                     ArmazenamentoDados().salvarViagem(viagem: self.viagem)
                                         
                     //para exibir anotação com os dados de endereço
-                    let anotacao = MKPointAnnotation()
-                    
-                    anotacao.coordinate.latitude = coordenadas.latitude
-                    anotacao.coordinate.longitude = coordenadas.longitude
-                    anotacao.title = localCompleto
-                    
-                    self.mapa.addAnnotation(anotacao)
+                    self.exibirAnotacao(viagem: self.viagem)
                     
                 }else{
                     print(erro!)
